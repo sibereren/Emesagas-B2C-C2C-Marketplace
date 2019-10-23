@@ -1,0 +1,687 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EmesagasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Fotografs">
+          <Key>
+            <PropertyRef Name="FotografId" />
+          </Key>
+          <Property Name="FotografId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FotografUrl" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="FotografAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="FotografAciklama" Type="nvarchar" MaxLength="1000" />
+          <Property Name="FotografEtiket" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Kategoris">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KategoriAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="KategoriAciklama" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="SiparisDetays">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DetaySiparisId" Type="int" Nullable="false" />
+          <Property Name="DetayUrunId" Type="int" Nullable="false" />
+          <Property Name="DetayFiyat" Type="money" Nullable="false" />
+          <Property Name="DetayAdet" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sipariss">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SiparisUyeId" Type="int" Nullable="false" />
+          <Property Name="SiparisTutari" Type="money" Nullable="false" />
+          <Property Name="KargoAlicisi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="KargoAdresi" Type="nvarchar" MaxLength="350" Nullable="false" />
+          <Property Name="KargoSehirId" Type="int" Nullable="false" />
+          <Property Name="KargoTelefon" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="KargoYontemiId" Type="int" Nullable="false" />
+          <Property Name="OdemeYontemiId" Type="int" Nullable="false" />
+          <Property Name="SiparisTarih" Type="date" Nullable="false" />
+          <Property Name="KargolanmaTarih" Type="date" Nullable="false" />
+          <Property Name="KargoTakipNo" Type="nvarchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Uruns">
+          <Key>
+            <PropertyRef Name="UrunId" />
+          </Key>
+          <Property Name="UrunId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UyeId" Type="int" Nullable="false" />
+          <Property Name="KategoriId" Type="int" Nullable="false" />
+          <Property Name="UrunAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UrunStokAdedi" Type="smallint" Nullable="false" />
+          <Property Name="UrunStokKalan" Type="smallint" Nullable="false" />
+          <Property Name="UrunStokSatilan" Type="smallint" Nullable="false" />
+          <Property Name="UrununDevamiVarMi" Type="bit" Nullable="false" />
+          <Property Name="FiyatKacAdetIcin" Type="smallint" Nullable="false" />
+          <Property Name="UrunFiyati" Type="money" Nullable="false" />
+          <Property Name="UrunAciklama" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="FotografID" Type="int" Nullable="false" />
+          <Property Name="UrunEklenmeTarihi" Type="date" Nullable="false" />
+          <Property Name="IlanAktifMi" Type="bit" Nullable="false" />
+          <Property Name="UrunAgirlikGram" Type="int" />
+          <Property Name="UrunKisaAciklama" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="UrunGuncellenmeTarihi" Type="date" Nullable="false" />
+          <Property Name="UrunUretimYeri" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UyeIpAdreslers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UyeId" Type="int" Nullable="false" />
+          <Property Name="IpNo" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Uyes">
+          <Key>
+            <PropertyRef Name="UyeId" />
+          </Key>
+          <Property Name="UyeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Soyad" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Unvan" Type="nvarchar" MaxLength="50" />
+          <Property Name="Adres" Type="nvarchar" MaxLength="350" Nullable="false" />
+          <Property Name="Telefon" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="FotografId" Type="int" Nullable="false" />
+          <Property Name="SehirId" Type="int" Nullable="false" />
+          <Property Name="UyelikAktifMi" Type="bit" Nullable="false" />
+          <Property Name="TedarikciMi" Type="bit" Nullable="false" />
+          <Property Name="UyelikDogrulandiMi" Type="bit" Nullable="false" />
+          <Property Name="UyeKayitTarihi" Type="date" Nullable="false" />
+          <Property Name="UyeIpAdreslerId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Kategoris_Uruns">
+          <End Role="Uruns" Type="Self.Uruns" Multiplicity="1" />
+          <End Role="Kategoris" Type="Self.Kategoris" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Uruns">
+              <PropertyRef Name="UrunId" />
+            </Principal>
+            <Dependent Role="Kategoris">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SiparisDetays_Sipariss">
+          <End Role="Sipariss" Type="Self.Sipariss" Multiplicity="1" />
+          <End Role="SiparisDetays" Type="Self.SiparisDetays" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sipariss">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="SiparisDetays">
+              <PropertyRef Name="DetaySiparisId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SiparisDetays_Uruns">
+          <End Role="Uruns" Type="Self.Uruns" Multiplicity="1" />
+          <End Role="SiparisDetays" Type="Self.SiparisDetays" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uruns">
+              <PropertyRef Name="UrunId" />
+            </Principal>
+            <Dependent Role="SiparisDetays">
+              <PropertyRef Name="DetayUrunId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sipariss_Uyes">
+          <End Role="Uyes" Type="Self.Uyes" Multiplicity="1" />
+          <End Role="Sipariss" Type="Self.Sipariss" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyes">
+              <PropertyRef Name="UyeId" />
+            </Principal>
+            <Dependent Role="Sipariss">
+              <PropertyRef Name="SiparisUyeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Uruns_Fotografs">
+          <End Role="Fotografs" Type="Self.Fotografs" Multiplicity="1" />
+          <End Role="Uruns" Type="Self.Uruns" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fotografs">
+              <PropertyRef Name="FotografId" />
+            </Principal>
+            <Dependent Role="Uruns">
+              <PropertyRef Name="FotografID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Uruns_Uyes">
+          <End Role="Uyes" Type="Self.Uyes" Multiplicity="1" />
+          <End Role="Uruns" Type="Self.Uruns" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyes">
+              <PropertyRef Name="UyeId" />
+            </Principal>
+            <Dependent Role="Uruns">
+              <PropertyRef Name="UyeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UyeIpAdreslers_Uyes">
+          <End Role="Uyes" Type="Self.Uyes" Multiplicity="1" />
+          <End Role="UyeIpAdreslers" Type="Self.UyeIpAdreslers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyes">
+              <PropertyRef Name="UyeId" />
+            </Principal>
+            <Dependent Role="UyeIpAdreslers">
+              <PropertyRef Name="UyeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UyeIpAdreslers_Uyes1">
+          <End Role="Uyes" Type="Self.Uyes" Multiplicity="1" />
+          <End Role="UyeIpAdreslers" Type="Self.UyeIpAdreslers" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Uyes">
+              <PropertyRef Name="UyeId" />
+            </Principal>
+            <Dependent Role="UyeIpAdreslers">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Uyes_Fotografs">
+          <End Role="Fotografs" Type="Self.Fotografs" Multiplicity="1" />
+          <End Role="Uyes" Type="Self.Uyes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fotografs">
+              <PropertyRef Name="FotografId" />
+            </Principal>
+            <Dependent Role="Uyes">
+              <PropertyRef Name="FotografId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EmesagasModelStoreContainer">
+          <EntitySet Name="Fotografs" EntityType="Self.Fotografs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kategoris" EntityType="Self.Kategoris" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SiparisDetays" EntityType="Self.SiparisDetays" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sipariss" EntityType="Self.Sipariss" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Uruns" EntityType="Self.Uruns" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UyeIpAdreslers" EntityType="Self.UyeIpAdreslers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Uyes" EntityType="Self.Uyes" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Kategoris_Uruns" Association="Self.FK_Kategoris_Uruns">
+            <End Role="Uruns" EntitySet="Uruns" />
+            <End Role="Kategoris" EntitySet="Kategoris" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SiparisDetays_Sipariss" Association="Self.FK_SiparisDetays_Sipariss">
+            <End Role="Sipariss" EntitySet="Sipariss" />
+            <End Role="SiparisDetays" EntitySet="SiparisDetays" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SiparisDetays_Uruns" Association="Self.FK_SiparisDetays_Uruns">
+            <End Role="Uruns" EntitySet="Uruns" />
+            <End Role="SiparisDetays" EntitySet="SiparisDetays" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sipariss_Uyes" Association="Self.FK_Sipariss_Uyes">
+            <End Role="Uyes" EntitySet="Uyes" />
+            <End Role="Sipariss" EntitySet="Sipariss" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Uruns_Fotografs" Association="Self.FK_Uruns_Fotografs">
+            <End Role="Fotografs" EntitySet="Fotografs" />
+            <End Role="Uruns" EntitySet="Uruns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Uruns_Uyes" Association="Self.FK_Uruns_Uyes">
+            <End Role="Uyes" EntitySet="Uyes" />
+            <End Role="Uruns" EntitySet="Uruns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UyeIpAdreslers_Uyes" Association="Self.FK_UyeIpAdreslers_Uyes">
+            <End Role="Uyes" EntitySet="Uyes" />
+            <End Role="UyeIpAdreslers" EntitySet="UyeIpAdreslers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UyeIpAdreslers_Uyes1" Association="Self.FK_UyeIpAdreslers_Uyes1">
+            <End Role="Uyes" EntitySet="Uyes" />
+            <End Role="UyeIpAdreslers" EntitySet="UyeIpAdreslers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Uyes_Fotografs" Association="Self.FK_Uyes_Fotografs">
+            <End Role="Fotografs" EntitySet="Fotografs" />
+            <End Role="Uyes" EntitySet="Uyes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EmesagasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Fotografs">
+          <Key>
+            <PropertyRef Name="FotografId" />
+          </Key>
+          <Property Name="FotografId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FotografUrl" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FotografAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FotografAciklama" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="FotografEtiket" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Uruns" Relationship="Self.FK_Uruns_Fotografs" FromRole="Fotografs" ToRole="Uruns" />
+          <NavigationProperty Name="Uyes" Relationship="Self.FK_Uyes_Fotografs" FromRole="Fotografs" ToRole="Uyes" />
+        </EntityType>
+        <EntityType Name="Kategoris">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KategoriAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KategoriAciklama" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Uruns" Relationship="Self.FK_Kategoris_Uruns" FromRole="Kategoris" ToRole="Uruns" />
+        </EntityType>
+        <EntityType Name="SiparisDetays">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DetaySiparisId" Type="Int32" Nullable="false" />
+          <Property Name="DetayUrunId" Type="Int32" Nullable="false" />
+          <Property Name="DetayFiyat" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="DetayAdet" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="Sipariss" Relationship="Self.FK_SiparisDetays_Sipariss" FromRole="SiparisDetays" ToRole="Sipariss" />
+          <NavigationProperty Name="Uruns" Relationship="Self.FK_SiparisDetays_Uruns" FromRole="SiparisDetays" ToRole="Uruns" />
+        </EntityType>
+        <EntityType Name="Sipariss">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiparisUyeId" Type="Int32" Nullable="false" />
+          <Property Name="SiparisTutari" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="KargoAlicisi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KargoAdresi" Type="String" MaxLength="350" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KargoSehirId" Type="Int32" Nullable="false" />
+          <Property Name="KargoTelefon" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KargoYontemiId" Type="Int32" Nullable="false" />
+          <Property Name="OdemeYontemiId" Type="Int32" Nullable="false" />
+          <Property Name="SiparisTarih" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="KargolanmaTarih" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="KargoTakipNo" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SiparisDetays" Relationship="Self.FK_SiparisDetays_Sipariss" FromRole="Sipariss" ToRole="SiparisDetays" />
+          <NavigationProperty Name="Uyes" Relationship="Self.FK_Sipariss_Uyes" FromRole="Sipariss" ToRole="Uyes" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Uruns">
+          <Key>
+            <PropertyRef Name="UrunId" />
+          </Key>
+          <Property Name="UrunId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UyeId" Type="Int32" Nullable="false" />
+          <Property Name="KategoriId" Type="Int32" Nullable="false" />
+          <Property Name="UrunAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UrunStokAdedi" Type="Int16" Nullable="false" />
+          <Property Name="UrunStokKalan" Type="Int16" Nullable="false" />
+          <Property Name="UrunStokSatilan" Type="Int16" Nullable="false" />
+          <Property Name="UrununDevamiVarMi" Type="Boolean" Nullable="false" />
+          <Property Name="FiyatKacAdetIcin" Type="Int16" Nullable="false" />
+          <Property Name="UrunFiyati" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="UrunAciklama" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FotografID" Type="Int32" Nullable="false" />
+          <Property Name="UrunEklenmeTarihi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IlanAktifMi" Type="Boolean" Nullable="false" />
+          <Property Name="UrunAgirlikGram" Type="Int32" />
+          <Property Name="UrunKisaAciklama" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UrunGuncellenmeTarihi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="UrunUretimYeri" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Fotografs" Relationship="Self.FK_Uruns_Fotografs" FromRole="Uruns" ToRole="Fotografs" />
+          <NavigationProperty Name="Kategoris" Relationship="Self.FK_Kategoris_Uruns" FromRole="Uruns" ToRole="Kategoris" />
+          <NavigationProperty Name="SiparisDetays" Relationship="Self.FK_SiparisDetays_Uruns" FromRole="Uruns" ToRole="SiparisDetays" />
+          <NavigationProperty Name="Uyes" Relationship="Self.FK_Uruns_Uyes" FromRole="Uruns" ToRole="Uyes" />
+        </EntityType>
+        <EntityType Name="UyeIpAdreslers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UyeId" Type="Int32" Nullable="false" />
+          <Property Name="IpNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Uyes" Relationship="Self.FK_UyeIpAdreslers_Uyes" FromRole="UyeIpAdreslers" ToRole="Uyes" />
+          <NavigationProperty Name="Uyes1" Relationship="Self.FK_UyeIpAdreslers_Uyes1" FromRole="UyeIpAdreslers" ToRole="Uyes" />
+        </EntityType>
+        <EntityType Name="Uyes">
+          <Key>
+            <PropertyRef Name="UyeId" />
+          </Key>
+          <Property Name="UyeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Soyad" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ad" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Unvan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adres" Type="String" MaxLength="350" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telefon" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FotografId" Type="Int32" Nullable="false" />
+          <Property Name="SehirId" Type="Int32" Nullable="false" />
+          <Property Name="UyelikAktifMi" Type="Boolean" Nullable="false" />
+          <Property Name="TedarikciMi" Type="Boolean" Nullable="false" />
+          <Property Name="UyelikDogrulandiMi" Type="Boolean" Nullable="false" />
+          <Property Name="UyeKayitTarihi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="UyeIpAdreslerId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Fotografs" Relationship="Self.FK_Uyes_Fotografs" FromRole="Uyes" ToRole="Fotografs" />
+          <NavigationProperty Name="Sipariss" Relationship="Self.FK_Sipariss_Uyes" FromRole="Uyes" ToRole="Sipariss" />
+          <NavigationProperty Name="Uruns" Relationship="Self.FK_Uruns_Uyes" FromRole="Uyes" ToRole="Uruns" />
+          <NavigationProperty Name="UyeIpAdreslers" Relationship="Self.FK_UyeIpAdreslers_Uyes" FromRole="Uyes" ToRole="UyeIpAdreslers" />
+          <NavigationProperty Name="UyeIpAdreslers1" Relationship="Self.FK_UyeIpAdreslers_Uyes1" FromRole="Uyes" ToRole="UyeIpAdreslers" />
+        </EntityType>
+        <Association Name="FK_Uruns_Fotografs">
+          <End Role="Fotografs" Type="Self.Fotografs" Multiplicity="1" />
+          <End Role="Uruns" Type="Self.Uruns" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fotografs">
+              <PropertyRef Name="FotografId" />
+            </Principal>
+            <Dependent Role="Uruns">
+              <PropertyRef Name="FotografID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Uyes_Fotografs">
+          <End Role="Fotografs" Type="Self.Fotografs" Multiplicity="1" />
+          <End Role="Uyes" Type="Self.Uyes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fotografs">
+              <PropertyRef Name="FotografId" />
+            </Principal>
+            <Dependent Role="Uyes">
+              <PropertyRef Name="FotografId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kategoris_Uruns">
+          <End Role="Uruns" Type="Self.Uruns" Multiplicity="1" />
+          <End Role="Kategoris" Type="Self.Kategoris" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Uruns">
+              <PropertyRef Name="UrunId" />
+            </Principal>
+            <Dependent Role="Kategoris">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SiparisDetays_Sipariss">
+          <End Role="Sipariss" Type="Self.Sipariss" Multiplicity="1" />
+          <End Role="SiparisDetays" Type="Self.SiparisDetays" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sipariss">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="SiparisDetays">
+              <PropertyRef Name="DetaySiparisId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SiparisDetays_Uruns">
+          <End Role="Uruns" Type="Self.Uruns" Multiplicity="1" />
+          <End Role="SiparisDetays" Type="Self.SiparisDetays" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uruns">
+              <PropertyRef Name="UrunId" />
+            </Principal>
+            <Dependent Role="SiparisDetays">
+              <PropertyRef Name="DetayUrunId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sipariss_Uyes">
+          <End Role="Uyes" Type="Self.Uyes" Multiplicity="1" />
+          <End Role="Sipariss" Type="Self.Sipariss" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyes">
+              <PropertyRef Name="UyeId" />
+            </Principal>
+            <Dependent Role="Sipariss">
+              <PropertyRef Name="SiparisUyeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Uruns_Uyes">
+          <End Role="Uyes" Type="Self.Uyes" Multiplicity="1" />
+          <End Role="Uruns" Type="Self.Uruns" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyes">
+              <PropertyRef Name="UyeId" />
+            </Principal>
+            <Dependent Role="Uruns">
+              <PropertyRef Name="UyeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UyeIpAdreslers_Uyes">
+          <End Role="Uyes" Type="Self.Uyes" Multiplicity="1" />
+          <End Role="UyeIpAdreslers" Type="Self.UyeIpAdreslers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyes">
+              <PropertyRef Name="UyeId" />
+            </Principal>
+            <Dependent Role="UyeIpAdreslers">
+              <PropertyRef Name="UyeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UyeIpAdreslers_Uyes1">
+          <End Role="Uyes" Type="Self.Uyes" Multiplicity="1" />
+          <End Role="UyeIpAdreslers" Type="Self.UyeIpAdreslers" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Uyes">
+              <PropertyRef Name="UyeId" />
+            </Principal>
+            <Dependent Role="UyeIpAdreslers">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EmesagasEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Fotografs" EntityType="Self.Fotografs" />
+          <EntitySet Name="Kategoris" EntityType="Self.Kategoris" />
+          <EntitySet Name="SiparisDetays" EntityType="Self.SiparisDetays" />
+          <EntitySet Name="Sipariss" EntityType="Self.Sipariss" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Uruns" EntityType="Self.Uruns" />
+          <EntitySet Name="UyeIpAdreslers" EntityType="Self.UyeIpAdreslers" />
+          <EntitySet Name="Uyes" EntityType="Self.Uyes" />
+          <AssociationSet Name="FK_Uruns_Fotografs" Association="Self.FK_Uruns_Fotografs">
+            <End Role="Fotografs" EntitySet="Fotografs" />
+            <End Role="Uruns" EntitySet="Uruns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Uyes_Fotografs" Association="Self.FK_Uyes_Fotografs">
+            <End Role="Fotografs" EntitySet="Fotografs" />
+            <End Role="Uyes" EntitySet="Uyes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kategoris_Uruns" Association="Self.FK_Kategoris_Uruns">
+            <End Role="Uruns" EntitySet="Uruns" />
+            <End Role="Kategoris" EntitySet="Kategoris" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SiparisDetays_Sipariss" Association="Self.FK_SiparisDetays_Sipariss">
+            <End Role="Sipariss" EntitySet="Sipariss" />
+            <End Role="SiparisDetays" EntitySet="SiparisDetays" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SiparisDetays_Uruns" Association="Self.FK_SiparisDetays_Uruns">
+            <End Role="Uruns" EntitySet="Uruns" />
+            <End Role="SiparisDetays" EntitySet="SiparisDetays" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sipariss_Uyes" Association="Self.FK_Sipariss_Uyes">
+            <End Role="Uyes" EntitySet="Uyes" />
+            <End Role="Sipariss" EntitySet="Sipariss" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Uruns_Uyes" Association="Self.FK_Uruns_Uyes">
+            <End Role="Uyes" EntitySet="Uyes" />
+            <End Role="Uruns" EntitySet="Uruns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UyeIpAdreslers_Uyes" Association="Self.FK_UyeIpAdreslers_Uyes">
+            <End Role="Uyes" EntitySet="Uyes" />
+            <End Role="UyeIpAdreslers" EntitySet="UyeIpAdreslers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UyeIpAdreslers_Uyes1" Association="Self.FK_UyeIpAdreslers_Uyes1">
+            <End Role="Uyes" EntitySet="Uyes" />
+            <End Role="UyeIpAdreslers" EntitySet="UyeIpAdreslers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EmesagasModelStoreContainer" CdmEntityContainer="EmesagasEntities">
+          <EntitySetMapping Name="Fotografs">
+            <EntityTypeMapping TypeName="EmesagasModel.Fotografs">
+              <MappingFragment StoreEntitySet="Fotografs">
+                <ScalarProperty Name="FotografId" ColumnName="FotografId" />
+                <ScalarProperty Name="FotografUrl" ColumnName="FotografUrl" />
+                <ScalarProperty Name="FotografAdi" ColumnName="FotografAdi" />
+                <ScalarProperty Name="FotografAciklama" ColumnName="FotografAciklama" />
+                <ScalarProperty Name="FotografEtiket" ColumnName="FotografEtiket" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kategoris">
+            <EntityTypeMapping TypeName="EmesagasModel.Kategoris">
+              <MappingFragment StoreEntitySet="Kategoris">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="KategoriAdi" ColumnName="KategoriAdi" />
+                <ScalarProperty Name="KategoriAciklama" ColumnName="KategoriAciklama" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SiparisDetays">
+            <EntityTypeMapping TypeName="EmesagasModel.SiparisDetays">
+              <MappingFragment StoreEntitySet="SiparisDetays">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="DetaySiparisId" ColumnName="DetaySiparisId" />
+                <ScalarProperty Name="DetayUrunId" ColumnName="DetayUrunId" />
+                <ScalarProperty Name="DetayFiyat" ColumnName="DetayFiyat" />
+                <ScalarProperty Name="DetayAdet" ColumnName="DetayAdet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sipariss">
+            <EntityTypeMapping TypeName="EmesagasModel.Sipariss">
+              <MappingFragment StoreEntitySet="Sipariss">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="SiparisUyeId" ColumnName="SiparisUyeId" />
+                <ScalarProperty Name="SiparisTutari" ColumnName="SiparisTutari" />
+                <ScalarProperty Name="KargoAlicisi" ColumnName="KargoAlicisi" />
+                <ScalarProperty Name="KargoAdresi" ColumnName="KargoAdresi" />
+                <ScalarProperty Name="KargoSehirId" ColumnName="KargoSehirId" />
+                <ScalarProperty Name="KargoTelefon" ColumnName="KargoTelefon" />
+                <ScalarProperty Name="KargoYontemiId" ColumnName="KargoYontemiId" />
+                <ScalarProperty Name="OdemeYontemiId" ColumnName="OdemeYontemiId" />
+                <ScalarProperty Name="SiparisTarih" ColumnName="SiparisTarih" />
+                <ScalarProperty Name="KargolanmaTarih" ColumnName="KargolanmaTarih" />
+                <ScalarProperty Name="KargoTakipNo" ColumnName="KargoTakipNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="EmesagasModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Uruns">
+            <EntityTypeMapping TypeName="EmesagasModel.Uruns">
+              <MappingFragment StoreEntitySet="Uruns">
+                <ScalarProperty Name="UrunId" ColumnName="UrunId" />
+                <ScalarProperty Name="UyeId" ColumnName="UyeId" />
+                <ScalarProperty Name="KategoriId" ColumnName="KategoriId" />
+                <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
+                <ScalarProperty Name="UrunStokAdedi" ColumnName="UrunStokAdedi" />
+                <ScalarProperty Name="UrunStokKalan" ColumnName="UrunStokKalan" />
+                <ScalarProperty Name="UrunStokSatilan" ColumnName="UrunStokSatilan" />
+                <ScalarProperty Name="UrununDevamiVarMi" ColumnName="UrununDevamiVarMi" />
+                <ScalarProperty Name="FiyatKacAdetIcin" ColumnName="FiyatKacAdetIcin" />
+                <ScalarProperty Name="UrunFiyati" ColumnName="UrunFiyati" />
+                <ScalarProperty Name="UrunAciklama" ColumnName="UrunAciklama" />
+                <ScalarProperty Name="FotografID" ColumnName="FotografID" />
+                <ScalarProperty Name="UrunEklenmeTarihi" ColumnName="UrunEklenmeTarihi" />
+                <ScalarProperty Name="IlanAktifMi" ColumnName="IlanAktifMi" />
+                <ScalarProperty Name="UrunAgirlikGram" ColumnName="UrunAgirlikGram" />
+                <ScalarProperty Name="UrunKisaAciklama" ColumnName="UrunKisaAciklama" />
+                <ScalarProperty Name="UrunGuncellenmeTarihi" ColumnName="UrunGuncellenmeTarihi" />
+                <ScalarProperty Name="UrunUretimYeri" ColumnName="UrunUretimYeri" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UyeIpAdreslers">
+            <EntityTypeMapping TypeName="EmesagasModel.UyeIpAdreslers">
+              <MappingFragment StoreEntitySet="UyeIpAdreslers">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="UyeId" ColumnName="UyeId" />
+                <ScalarProperty Name="IpNo" ColumnName="IpNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Uyes">
+            <EntityTypeMapping TypeName="EmesagasModel.Uyes">
+              <MappingFragment StoreEntitySet="Uyes">
+                <ScalarProperty Name="UyeId" ColumnName="UyeId" />
+                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Unvan" ColumnName="Unvan" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="FotografId" ColumnName="FotografId" />
+                <ScalarProperty Name="SehirId" ColumnName="SehirId" />
+                <ScalarProperty Name="UyelikAktifMi" ColumnName="UyelikAktifMi" />
+                <ScalarProperty Name="TedarikciMi" ColumnName="TedarikciMi" />
+                <ScalarProperty Name="UyelikDogrulandiMi" ColumnName="UyelikDogrulandiMi" />
+                <ScalarProperty Name="UyeKayitTarihi" ColumnName="UyeKayitTarihi" />
+                <ScalarProperty Name="UyeIpAdreslerId" ColumnName="UyeIpAdreslerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
