@@ -1,0 +1,112 @@
+﻿@model EmesagasData.Uruns
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Uruns</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UyeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UyeId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunStokAdedi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunStokAdedi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunStokKalan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunStokKalan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunStokSatilan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunStokSatilan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunFiyati)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunFiyati)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunAciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunAciklama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunEklenmeTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunEklenmeTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IlanAktifMi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IlanAktifMi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunKisaAciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunKisaAciklama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunGuncellenmeTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunGuncellenmeTarihi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

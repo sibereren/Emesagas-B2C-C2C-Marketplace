@@ -34,7 +34,8 @@ namespace EmesagasDB
         public bool TedarikciMi { get; set; }
         public bool UyelikDogrulandiMi { get; set; }
         public System.DateTime UyeKayitTarihi { get; set; }
-        public int UyeIpAdreslerId { get; set; }
+        public Nullable<int> UyeIpAdreslerId { get; set; }
+        public string AspNetUsersId { get; set; }
     
         public virtual Fotografs Fotografs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -44,5 +45,6 @@ namespace EmesagasDB
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UyeIpAdreslers> UyeIpAdreslers { get; set; }
         public virtual UyeIpAdreslers UyeIpAdreslers1 { get; set; }
+        public virtual AspNetUsers AspNetUsers { get; set; }
     }
 }

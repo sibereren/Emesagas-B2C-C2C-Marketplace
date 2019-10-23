@@ -13,10 +13,10 @@ namespace EmesagasDB
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class EmesagasEntities : DbContext
+    public partial class EmesagasEntities1 : DbContext
     {
-        public EmesagasEntities()
-            : base("name=EmesagasEntities")
+        public EmesagasEntities1()
+            : base("name=EmesagasEntities1")
         {
         }
     
@@ -25,6 +25,11 @@ namespace EmesagasDB
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
+        public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
+        public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
+        public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
+        public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
         public virtual DbSet<Fotografs> Fotografs { get; set; }
         public virtual DbSet<Kategoris> Kategoris { get; set; }
         public virtual DbSet<SiparisDetays> SiparisDetays { get; set; }

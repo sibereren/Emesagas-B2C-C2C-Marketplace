@@ -5,14 +5,14 @@ namespace EmesagasDB.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<EmesagasDB.EmesagasEntities>
+    internal sealed class Configuration : DbMigrationsConfiguration<EmesagasDB.EmesagasEntities1>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(EmesagasDB.EmesagasEntities context)
+        protected override void Seed(EmesagasDB.EmesagasEntities1 context)
         {
             //  This method will be called after migrating to the latest version.
 

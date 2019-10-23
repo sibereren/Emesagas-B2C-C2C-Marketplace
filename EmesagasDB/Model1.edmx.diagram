@@ -4,15 +4,22 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="76d8601f27d4475da8442ff47eedab7f" Name="Diagram1">
+      <Diagram DiagramId="38080518ae7f4f8c919ab3e265888f80" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="EmesagasModel.C__MigrationHistory" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmesagasModel.AspNetRoles" Width="1.5" PointX="2.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmesagasModel.AspNetUserClaims" Width="1.5" PointX="7.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmesagasModel.AspNetUserLogins" Width="1.5" PointX="7.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmesagasModel.AspNetUsers" Width="1.5" PointX="5" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="EmesagasModel.Fotografs" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
         <EntityTypeShape EntityType="EmesagasModel.Kategoris" Width="1.5" PointX="10.5" PointY="10.25" IsExpanded="true" />
         <EntityTypeShape EntityType="EmesagasModel.SiparisDetays" Width="1.5" PointX="10.5" PointY="13.125" IsExpanded="true" />
         <EntityTypeShape EntityType="EmesagasModel.Sipariss" Width="1.5" PointX="5.25" PointY="10.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmesagasModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmesagasModel.sysdiagrams" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EmesagasModel.Uruns" Width="1.5" PointX="8.25" PointY="8.625" IsExpanded="true" />
         <EntityTypeShape EntityType="EmesagasModel.UyeIpAdreslers" Width="1.5" PointX="5.25" PointY="14.875" IsExpanded="true" />
         <EntityTypeShape EntityType="EmesagasModel.Uyes" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <AssociationConnector Association="EmesagasModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="EmesagasModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="EmesagasModel.FK_Uruns_Fotografs" ManuallyRouted="false" />
         <AssociationConnector Association="EmesagasModel.FK_Uyes_Fotografs" ManuallyRouted="false" />
         <AssociationConnector Association="EmesagasModel.FK_Kategoris_Uruns" ManuallyRouted="false" />
@@ -22,7 +29,9 @@
         <AssociationConnector Association="EmesagasModel.FK_Uruns_Uyes" ManuallyRouted="false" />
         <AssociationConnector Association="EmesagasModel.FK_UyeIpAdreslers_Uyes" ManuallyRouted="false" />
         <AssociationConnector Association="EmesagasModel.FK_UyeIpAdreslers_Uyes1" ManuallyRouted="false" />
-        </Diagram>
+        <AssociationConnector Association="EmesagasModel.AspNetUserRoles" ManuallyRouted="false" />
+        <AssociationConnector Association="EmesagasModel.FK_Uyes_AspNetUsers" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

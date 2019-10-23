@@ -1,0 +1,106 @@
+﻿@model EmesagasData.Uruns
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Uruns</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UyeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UyeId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunStokAdedi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunStokAdedi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunStokKalan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunStokKalan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunStokSatilan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunStokSatilan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunFiyati)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunFiyati)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunAciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunAciklama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunEklenmeTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunEklenmeTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IlanAktifMi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IlanAktifMi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunKisaAciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunKisaAciklama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunGuncellenmeTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunGuncellenmeTarihi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UrunsId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

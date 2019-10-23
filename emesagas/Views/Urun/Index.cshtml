@@ -1,0 +1,93 @@
+﻿@model IEnumerable<EmesagasData.Uruns>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UyeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrunAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrunStokAdedi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrunStokKalan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrunStokSatilan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrunFiyati)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrunAciklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrunEklenmeTarihi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IlanAktifMi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrunKisaAciklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrunGuncellenmeTarihi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UyeId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrunAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrunStokAdedi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrunStokKalan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrunStokSatilan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrunFiyati)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrunAciklama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrunEklenmeTarihi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IlanAktifMi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrunKisaAciklama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrunGuncellenmeTarihi)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UrunsId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UrunsId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UrunsId })
+        </td>
+    </tr>
+}
+
+</table>
